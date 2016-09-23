@@ -1,0 +1,18 @@
+# Dependencies directories
+
+/node_modules
+/bower_components
+/frontend/lib
+/frontend/js/appconfig.js
+/frontend/uploads
+/vendor
+/lumen.log
+
+# Application files
+
+.env
+!.env.example
+
+# Temp files
+
+.DS_Store
