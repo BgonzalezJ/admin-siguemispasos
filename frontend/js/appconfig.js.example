@@ -1,0 +1,4 @@
+var appconfig = {
+  url: 'http://url-de-tu-proyecto/',
+  api: 'http://url-de-tu-proyecto/api'
+};

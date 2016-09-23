@@ -1,0 +1,70 @@
+<section id="pictures">
+	<div class="container">
+		
+		<header>
+			<h1 class="text-center">
+				Filtro de imágenes
+			</h1>
+		</header>
+
+		<div>
+			<p class="text-center">
+				Haz click en el botón de abajo para buscar<br/>imágenes recientes
+				con el hashtag <span class="hashtag bold">#SigueMisPasos</span>
+			</p>
+		</div>
+
+		<div class="row buscador">
+			<div class="col-md-10 col-sm-10 col-xs-8 col-lg-10">
+				<button class="btn btn-primary btn-block" ng-click="search()">Buscar imágenes</button>
+			</div>
+			<div class="col-md-2 col-sm-2 col-xs-4 col-lg-2 loader text-center">
+				<img src="/img/loader.gif" />
+			</div>
+
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+				<div class="alert alert-info">
+					Esto puede tomar unos minutos.
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+			<h2>Imágenes</h2>
+		</div>
+
+		<ul>
+			<li ng-repeat="picture in pictures" class="col-md-4 col-sm-4 col-lg-4 col-xs-12" ng-class="{'active' : picture.active}">
+				<div class="publicado">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="img-container">
+					<img ng-src="{{picture.image_url}}" /> 
+				</div>
+
+				<div class="row botones">
+					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+						<a ng-href="{{picture.link}}" class="btn btn-info btn-block" target="_blank">
+							Link
+						</a>
+					</div>
+
+					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+						<button class="btn btn-info btn-block" ng-click="activar(picture)">
+							<span ng-show="!picture.active">Publicar</span>
+							<span ng-show="picture.active">Ocultar</span>
+						</button>
+					</div>
+				</div>
+			</li>
+
+			<li class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center">
+				<button class="btn btn-primary" ng-click="getMore()" ng-disabled="nomore">
+					Cargar Más
+				</button>
+			</li>
+
+		</ul>
+
+	</div>
+</section>
